@@ -11,7 +11,7 @@ var app = new Framework7({
     },
 	cache:false,
 	cacheDuration: 0,
-	modalTitle: 'App Framework7',
+	modalTitle: 'App Staff',
 	panel: {
 
 		swipe: true,
@@ -28,10 +28,15 @@ var app = new Framework7({
     	url: 'sobre-staff.html',
     	name: 'sobre-staff',
   		},
+		{
+		path: '/checkout/',
+    	url: 'checkout.html',
+    	name: 'checkout',
+  		},
 		
 	],
 	dialog: {
-		title: '¡Bienvenido a bordo Jugador!',
+		title: '¡Staff Interactive',
 		buttonOk: 'Aceptar',
   	},
 	popup: {
@@ -66,19 +71,29 @@ $$('#btnLogin').on('click', function (e) {
 
 
 
-$$(document).on('click', '#btnAddCart', function (e) {
+$$(document).on('click', '#btnCheckout', function (e) {
 	e.preventDefault();
 
+
+	app.dialog.confirm('¿Seguro desea finalizar su compra?', function () {
+
+		
+
+		//app.dialog.alert('Great!');
+
 	
-	var notification = app.notification.create({
-      icon: '<i class="material-icons">check</i>',
-      title: 'Order',
-      titleRightText: '',
-      subtitle: '',
-      text: "Your order has been received.",
-      closeTimeout: 3000,
-    });
-    notification.open();
+		var notification = app.notification.create({
+		 icon: '<i class="material-icons">check</i>',
+		 title: 'Compra Completada',
+		 titleRightText: '',
+		 subtitle: '',
+		 text: "Tu orden a sido recibida, muchas gracias por tu compra.",
+		 closeTimeout: 3000,
+		});
+		notification.open();
+		
+		
+	});
 	
 });
 

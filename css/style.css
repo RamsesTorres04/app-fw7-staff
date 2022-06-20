@@ -114,3 +114,13 @@
 #app i{
 	color:#CAB6B6;
 }
+#checkout{
+	background-color: #AE2828;
+}
+#checkout h2{
+	color: #611910;
+	text-transform: uppercase;
+}
+#checkout .row{
+	background-color: #B33F3F;
+}
